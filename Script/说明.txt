@@ -1,0 +1,7 @@
+﻿数据库更改;
+  atomtable 改为 atoms
+  section 改为 chapters
+
+
+以下是代码重构过程：使用StrangeIoc框架
+    1.使用ChapterView代替ReadMysqlEdit
