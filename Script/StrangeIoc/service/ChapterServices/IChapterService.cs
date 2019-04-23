@@ -1,7 +1,10 @@
-﻿namespace Assets.Script.StrangeIoc.service.ChapterServices
+﻿using Assets.Script.StrangeIoc.signal.ChapterSignal;
+
+namespace Assets.Script.StrangeIoc.service.ChapterServices
 {
     public interface IChapterService
     {
-        void GetAllSections();
+        ReturnFromServiceSignal ReturnFromServiceSignal { get; set; }
+        void GetAllChapters();
     }
 }

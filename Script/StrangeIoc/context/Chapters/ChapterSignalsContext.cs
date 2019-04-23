@@ -5,7 +5,6 @@ using Assets.Script.StrangeIoc.model.Chapters;
 using Assets.Script.StrangeIoc.model.Users;
 using Assets.Script.StrangeIoc.service.ChapterServices;
 using Assets.Script.StrangeIoc.Scripts.service.UserServices;
-using Assets.Script.StrangeIoc.Scripts.signal.SectionSignal;
 using Assets.Script.StrangeIoc.Scripts.signal.UserSignal;
 using Assets.Script.StrangeIoc.signal;
 using Assets.Script.StrangeIoc.signal.ChapterSignal;
@@ -45,14 +44,14 @@ namespace Assets.Script.StrangeIoc.context.Chapters
             commandBinder.Bind<LoginSignal>().To<UserCommand>();
 
             commandBinder.Bind<StartSignal>().To<StartCommand>().Once();
-            commandBinder.Bind<GetAllChapterSignal>().To<ChapterCommand>();
+            commandBinder.Bind<ChapterSignal>().To<ChapterCommand>();
 
 
             //将信号绑定，才可以在注入的类中使用
             injectionBinder.Bind<OnLoginResFromServiceToControllerSignal>().ToSingleton();
             injectionBinder.Bind<OnLoginResFromControllerToMediatorSignal>().ToSingleton();
-            injectionBinder.Bind<OnGetAllChapterFromServiceToCommand>().ToSingleton();
-            injectionBinder.Bind<OnGetAllChapterFromCommandToMediator>().ToSingleton();
+            injectionBinder.Bind<ReturnFromServiceSignal>().ToSingleton();
+            injectionBinder.Bind<ReturnFromCommandSignal>().ToSingleton();
         }
 
         public override IContext Start()

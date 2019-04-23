@@ -1,16 +1,18 @@
-﻿using Assets.Script.StrangeIoc.Scripts.Dao;
-using Assets.Script.StrangeIoc.Scripts.signal.SectionSignal;
+﻿using Assets.Script.StrangeIoc.controller.ChapterCommands;
+using Assets.Script.StrangeIoc.signal.ChapterSignal;
+using Assets.Script.StrangeIoc.Scripts.Dao;
 
 namespace Assets.Script.StrangeIoc.service.ChapterServices
 {
     class ChapterService:IChapterService
     {
         [Inject] 
-        public OnGetAllChapterFromServiceToCommand signal { get; set; }
+        public ReturnFromServiceSignal ReturnFromServiceSignal { get; set; }
         private ChapterDao chapterDao=new ChapterDao();
-        public void GetAllSections()
+        public void GetAllChapters()
         {
-            signal.Dispatch(chapterDao.SelectAllChapterItem());
+            string requestCode = ChapterEvent.GetAllChapters;
+            ReturnFromServiceSignal.Dispatch(requestCode,chapterDao.SelectAllChapterItem());
         }
     }
 }

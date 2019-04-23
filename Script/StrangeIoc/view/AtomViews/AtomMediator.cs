@@ -49,7 +49,7 @@ namespace Assets.Script.StrangeIoc.view.AtomViews
         /// <param name="responseData">数据库返回的数据</param>
         private void HandleResponse(string requestCode, List<Atom> responseData)
         {
-            Debug.Log("mediator获取到数据库结果");
+            //Debug.Log("mediator获取到数据库结果");
             if (requestCode == AtomEvent.GetAllAtoms)
             {
                 OnGetAllAtom(responseData as List<Atom>);

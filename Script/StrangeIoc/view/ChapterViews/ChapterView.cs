@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Script.StrangeIoc.controller.ChapterCommands;
 using Assets.Script.StrangeIoc.model.Chapters;
 using strange.extensions.mediation.impl;
 using strange.extensions.signal.impl;
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 public class ChapterView : View
 {
     //获取所有章节信号
-    public Signal getAllChaptersSignal=new Signal();
+    public Signal<string,string> signal=new Signal<string,string>();
     //存放所有章节的父物体
     public GameObject chapterLayoutGroup;
     //章节按钮预制体
@@ -18,9 +19,10 @@ public class ChapterView : View
     public GameObject chapterPanel;
     private List<Chapter> chapterList = null;
 
-    protected override void Start()
+
+    void Start()
     {
-        getAllChaptersSignal.Dispatch();
+        signal.Dispatch(ChapterEvent.GetAllChapters,null);
     }
     void Update()
     {

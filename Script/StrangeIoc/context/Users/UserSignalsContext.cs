@@ -1,22 +1,16 @@
 ﻿using Assets.Script.StrangeIoc.controller;
-using Assets.Script.StrangeIoc.controller.ChapterCommands;
 using Assets.Script.StrangeIoc.controller.UserCommands;
-using Assets.Script.StrangeIoc.model.Chapters;
 using Assets.Script.StrangeIoc.model.Users;
-using Assets.Script.StrangeIoc.service.ChapterServices;
-using Assets.Script.StrangeIoc.Scripts.service.UserServices;
-using Assets.Script.StrangeIoc.Scripts.signal.SectionSignal;
-using Assets.Script.StrangeIoc.Scripts.signal.UserSignal;
 using Assets.Script.StrangeIoc.signal;
-using Assets.Script.StrangeIoc.signal.ChapterSignal;
-using Assets.Script.StrangeIoc.view.ChapterViews;
+using Assets.Script.StrangeIoc.Scripts.service.UserServices;
+using Assets.Script.StrangeIoc.Scripts.signal.UserSignal;
 using strange.extensions.command.api;
 using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using strange.extensions.context.impl;
 using UnityEngine;
 
-namespace Assets.Script.StrangeIoc.context.Chapters
+namespace Assets.Script.StrangeIoc.context.Users
 {
     public class UserSignalsContext : MVCSContext {
         public UserSignalsContext(MonoBehaviour view) : base(view)

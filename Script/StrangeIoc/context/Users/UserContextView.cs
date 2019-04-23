@@ -1,4 +1,5 @@
-﻿using strange.extensions.context.impl;
+﻿using Assets.Script.StrangeIoc.context.Users;
+using strange.extensions.context.impl;
 
 namespace Assets.Script.StrangeIoc.context.Chapters
 {

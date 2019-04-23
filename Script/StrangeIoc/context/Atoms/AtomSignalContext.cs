@@ -45,7 +45,7 @@ namespace Assets.Script.StrangeIoc.context.Atoms
             commandBinder.Bind<AtomSignal>().To<AtomCommand>();
 
             injectionBinder.Bind<ReturnFromCommandSignal>().ToSingleton();
-            injectionBinder.Bind<ReturnSignal>().ToSingleton();
+            injectionBinder.Bind<ReturnFromServiceSignal>().ToSingleton();
         }
     }
 }

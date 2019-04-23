@@ -51,6 +51,7 @@ namespace Assets.Script.StrangeIoc.view.AtomViews
         public void OnLoadAtoms(List<Atom> atomList)
         {
             this.atomList = atomList;
+            AtomData.atomList = atomList;
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Assets.Script.StrangeIoc.view.AtomViews
         /// </summary>
         private void OnAtomBtnClick()
         {
-            signal.Dispatch(AtomEvent.GetAtom,ButtonEvent.TypeName);
+            signal.Dispatch(AtomEvent.GetAtom,ButtonEvent.AtomName);
         }
 
         /// <summary>

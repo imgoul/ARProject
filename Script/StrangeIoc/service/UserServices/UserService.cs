@@ -8,22 +8,22 @@ namespace Assets.Script.StrangeIoc.Scripts.service.UserServices
     public class UserService : IUserService
     {
         [Inject]
-        public OnLoginResFromServiceToControllerSignal loginResSignal { get; set; }
+        public OnLoginResFromServiceToControllerSignal LoginResSignal { get; set; }
 
         [Inject] 
-        public IUser userModel { get; set; }
+        public IUser UserModel { get; set; }
         private UserDao userDao=new UserDao();
         public void RequestLogin(User user)
         {
             Debug.Log("UserService验证登录获取到登录请求结果，将登录请求结果发送给LoginCommand");
             bool isSuccess = userDao.VertifyUser(user);
             if (isSuccess)
-                userModel = user;
+                UserModel = user;
             else
             {
-                userModel = null;
+                UserModel = null;
             }
-            loginResSignal.Dispatch(isSuccess==true);
+            LoginResSignal.Dispatch(isSuccess==true);
         }
 
         public void RequestRegister(User user)

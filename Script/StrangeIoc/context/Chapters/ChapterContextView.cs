@@ -1,11 +1,10 @@
-﻿using strange.extensions.context.impl;
+﻿using Assets.Script.StrangeIoc.context.Chapters;
+using strange.extensions.context.impl;
 
-namespace Assets.Script.StrangeIoc.context.Chapters
-{
-    public class ChapterContextView : ContextView {
+public class ChapterContextView : ContextView {
         void Awake()
         {
-            context=new ChapterSignalsContext(this);
+            this.context=new ChapterSignalsContext(this);
         }
-    }
 }
+
